@@ -20,7 +20,7 @@ func init() {
 type IAMFactory struct {
 }
 
-func (f *IAMFactory) Create(c *common.Config) (fetching.Fetcher, error) {
+func (f *IAMFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
 	cfg := IAMFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {

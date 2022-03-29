@@ -20,7 +20,7 @@ func init() {
 type ELBFactory struct {
 }
 
-func (f *ELBFactory) Create(c *common.Config) (fetching.Fetcher, error) {
+func (f *ELBFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
 	cfg := ELBFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {

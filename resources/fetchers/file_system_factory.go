@@ -34,7 +34,7 @@ func init() {
 type FileSystemFactory struct {
 }
 
-func (f *FileSystemFactory) Create(c *common.Config) (fetching.Fetcher, error) {
+func (f *FileSystemFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
 	cfg := FileFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {

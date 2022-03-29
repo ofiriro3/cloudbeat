@@ -23,9 +23,11 @@ import (
 	"github.com/elastic/beats/v7/libbeat/common"
 )
 
+type ExtraElements common.MapStr
+
 // Factory can create fetcher instances based on configuration
 type Factory interface {
-	Create(*common.Config) (Fetcher, error)
+	Create(*common.Config, ExtraElements) (Fetcher, error)
 }
 
 // Fetcher represents a data fetcher.

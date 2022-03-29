@@ -20,7 +20,7 @@ func init() {
 type EKSFactory struct {
 }
 
-func (f *EKSFactory) Create(c *common.Config) (fetching.Fetcher, error) {
+func (f *EKSFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
 	cfg := EKSFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {

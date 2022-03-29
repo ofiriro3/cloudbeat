@@ -35,7 +35,7 @@ func init() {
 	manager.Factories.ListFetcherFactory(ProcessType, &ProcessFactory{})
 }
 
-func (f *ProcessFactory) Create(c *common.Config) (fetching.Fetcher, error) {
+func (f *ProcessFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
 	cfg := ProcessFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {

@@ -24,7 +24,7 @@ func init() {
 type ECRFactory struct {
 }
 
-func (f *ECRFactory) Create(c *common.Config) (fetching.Fetcher, error) {
+func (f *ECRFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
 	cfg := ECRFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {

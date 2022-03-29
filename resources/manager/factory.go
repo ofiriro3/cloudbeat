@@ -54,7 +54,7 @@ func (fa *factories) CreateFetcher(name string, c *common.Config) (fetching.Fetc
 		return nil, errors.New("fetcher factory could not be found")
 	}
 
-	return factory.Create(c)
+	return factory.Create(c, nil)
 }
 
 func (fa *factories) RegisterFetchers(registry FetchersRegistry, cfg config.Config) error {
