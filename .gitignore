@@ -12,3 +12,4 @@ cloudbeat-test
 *local.yaml
 *local.yml
 fields.yml
+tests/reports
