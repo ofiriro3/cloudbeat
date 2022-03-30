@@ -35,7 +35,7 @@ type FactoriesTestSuite struct {
 type numberFetcherFactory struct {
 }
 
-func (n *numberFetcherFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
+func (n *numberFetcherFactory) Create(c *common.Config, elements fetching.FetcherCtx) (fetching.Fetcher, error) {
 	// TODO - Ofir edit test
 	x, _ := c.Int("num", -1)
 	return &numberFetcher{int(x), false}, nil

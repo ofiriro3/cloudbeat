@@ -20,7 +20,7 @@ func init() {
 type EKSFactory struct {
 }
 
-func (f *EKSFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
+func (f *EKSFactory) Create(c *common.Config, elements fetching.FetcherCtx) (fetching.Fetcher, error) {
 	cfg := EKSFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {
@@ -31,8 +31,10 @@ func (f *EKSFactory) Create(c *common.Config, elements fetching.ExtraElements) (
 }
 
 func (f *EKSFactory) CreateFrom(cfg EKSFetcherConfig) (fetching.Fetcher, error) {
+	awsConfig := awsConfigProvider.GetConfiguration()
 	fe := &EKSFetcher{
 		cfg: cfg,
+		aws: awsConfig
 	}
 
 	return fe, nil
@@ -45,4 +47,8 @@ func NewEKSFetcher(awsCfg AwsFetcherConfig, cfg EKSFetcherConfig) (fetching.Fetc
 		cfg:         cfg,
 		eksProvider: eks,
 	}, nil
+}
+
+func (f *EKSFactory) GetFetcherType() string {
+	return "eks_fetcher"
 }

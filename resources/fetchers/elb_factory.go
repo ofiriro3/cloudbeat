@@ -20,7 +20,7 @@ func init() {
 type ELBFactory struct {
 }
 
-func (f *ELBFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
+func (f *ELBFactory) Create(c *common.Config, elements fetching.FetcherCtx) (fetching.Fetcher, error) {
 	cfg := ELBFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {
@@ -36,4 +36,8 @@ func (f *ELBFactory) CreateFrom(cfg ELBFetcherConfig) (fetching.Fetcher, error) 
 	}
 
 	return fe, nil
+}
+
+func (f *ELBFactory) GetFetcherType() string {
+	return "elb_fetcher"
 }

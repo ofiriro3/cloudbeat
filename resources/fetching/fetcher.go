@@ -23,11 +23,19 @@ import (
 	"github.com/elastic/beats/v7/libbeat/common"
 )
 
-type ExtraElements common.MapStr
+type FetcherCtx common.MapStr
+
+// ContextCreator enrich the fetcher input context by necessary data
+type ContextCreator interface {
+	GetContext(string) (interface{}, error)
+	GetName() string
+	GetContextName() string
+}
 
 // Factory can create fetcher instances based on configuration
 type Factory interface {
-	Create(*common.Config, ExtraElements) (Fetcher, error)
+	Create(*common.Config, FetcherCtx) (Fetcher, error)
+	GetFetcherType() string
 }
 
 // Fetcher represents a data fetcher.

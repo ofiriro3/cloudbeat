@@ -32,11 +32,15 @@ import (
 var Factories = newFactories()
 
 type factories struct {
-	m map[string]fetching.Factory
+	m          map[string]fetching.Factory
+	ctxCreator FetcherCtxCreatorStrategy
 }
 
 func newFactories() factories {
-	return factories{m: make(map[string]fetching.Factory)}
+	return factories{
+		m:          make(map[string]fetching.Factory),
+		ctxCreator: &FetcherCtxCreator{ctxCreators: make(map[string]fetching.ContextCreator)},
+	}
 }
 
 func (fa *factories) ListFetcherFactory(name string, f fetching.Factory) {
@@ -53,8 +57,11 @@ func (fa *factories) CreateFetcher(name string, c *common.Config) (fetching.Fetc
 	if !ok {
 		return nil, errors.New("fetcher factory could not be found")
 	}
-
-	return factory.Create(c, nil)
+	extraElements, err := fa.ctxCreator.CreateContext(factory.GetFetcherType())
+	if err != nil {
+		return nil, err
+	}
+	return factory.Create(c, extraElements)
 }
 
 func (fa *factories) RegisterFetchers(registry FetchersRegistry, cfg config.Config) error {

@@ -31,7 +31,7 @@ func init() {
 	manager.Factories.ListFetcherFactory(fetching.KubeAPIType, &KubeFactory{})
 }
 
-func (f *KubeFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
+func (f *KubeFactory) Create(c *common.Config, elements fetching.FetcherCtx) (fetching.Fetcher, error) {
 	cfg := KubeApiFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {
@@ -48,4 +48,9 @@ func (f *KubeFactory) CreateFrom(cfg KubeApiFetcherConfig) (fetching.Fetcher, er
 	}
 
 	return fe, nil
+}
+
+func (f *KubeFactory) GetFetcherType() string {
+	//TODO implement me
+	panic("implement me")
 }

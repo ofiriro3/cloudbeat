@@ -20,7 +20,7 @@ func init() {
 type IAMFactory struct {
 }
 
-func (f *IAMFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
+func (f *IAMFactory) Create(c *common.Config, elements fetching.FetcherCtx) (fetching.Fetcher, error) {
 	cfg := IAMFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {
@@ -45,4 +45,9 @@ func NewIAMFetcher(awsCfg AwsFetcherConfig, cfg IAMFetcherConfig) (fetching.Fetc
 		cfg:         cfg,
 		iamProvider: iam,
 	}, nil
+}
+
+
+func (f *IAMFactory) GetFetcherType() string {
+	return "iam_fetcher"
 }

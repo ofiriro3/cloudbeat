@@ -24,7 +24,7 @@ func init() {
 type ECRFactory struct {
 }
 
-func (f *ECRFactory) Create(c *common.Config, elements fetching.ExtraElements) (fetching.Fetcher, error) {
+func (f *ECRFactory) Create(c *common.Config, elements fetching.FetcherCtx) (fetching.Fetcher, error) {
 	cfg := ECRFetcherConfig{}
 	err := c.Unpack(&cfg)
 	if err != nil {
@@ -65,4 +65,8 @@ func NewECRFetcher(awsCfg AwsFetcherConfig, cfg ECRFetcherConfig, ctx context.Co
 			regexp.MustCompile(PublicRepoRegex),
 		},
 	}, nil
+}
+
+func (f *ECRFactory) GetFetcherType() string {
+	return "ecr_fetcher"
 }
