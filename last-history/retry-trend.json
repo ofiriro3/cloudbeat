@@ -1,0 +1,9 @@
+[ {
+  "buildOrder" : 1,
+  "reportUrl" : "https://ofiriro3.github.io/cloudbeat/1/",
+  "reportName" : "Allure Report with history",
+  "data" : {
+    "run" : 9,
+    "retry" : 0
+  }
+} ]

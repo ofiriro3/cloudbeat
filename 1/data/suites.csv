@@ -1,0 +1,85 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Sun Apr 17 15:35:46 GMT 2022","Sun Apr 17 15:35:46 GMT 2022","0","product.tests","test_rules","","","","test_master_node_configuration[CIS 1.1.2 daemon:daemon]","
+    This data driven test verifies rules and findings return by cloudbeat agent.
+    In order to add new cases @pytest.mark.parameterize section shall be updated.
+    Setup and teardown actions are defined in data method.
+    This test creates cloudbeat agent instance, changes node resources (modes, users, groups) and verifies,
+    that cloudbeat returns correct finding.
+    @param data: Fixture that returns object instances and configurations.
+    @param rule_tag: Name of rule to be verified.
+    @param command: Command to be executed, for example chmod / chown
+    @param param_value: Value to be used when executing command.
+    @param resource: Full path to resource / file
+    @param expected: Result to be found in finding evaluation field.
+    @return: None - Test Pass / Fail result is generated.
+    "
+"broken","Sun Apr 17 15:35:45 GMT 2022","Sun Apr 17 15:35:45 GMT 2022","0","integration.tests","test_output_to_elasticsearch","","","","test_elastic_index_exists[process]","
+    This test verifies that findings of all types are sending to elasticsearch
+    :param elastic_client: Elastic API client
+    :param match_type: Findings type for matching
+    :return:
+    "
+"broken","Sun Apr 17 15:35:46 GMT 2022","Sun Apr 17 15:35:46 GMT 2022","0","product.tests","test_rules","","","","test_master_node_configuration[CIS 1.1.1 mode 644]","
+    This data driven test verifies rules and findings return by cloudbeat agent.
+    In order to add new cases @pytest.mark.parameterize section shall be updated.
+    Setup and teardown actions are defined in data method.
+    This test creates cloudbeat agent instance, changes node resources (modes, users, groups) and verifies,
+    that cloudbeat returns correct finding.
+    @param data: Fixture that returns object instances and configurations.
+    @param rule_tag: Name of rule to be verified.
+    @param command: Command to be executed, for example chmod / chown
+    @param param_value: Value to be used when executing command.
+    @param resource: Full path to resource / file
+    @param expected: Result to be found in finding evaluation field.
+    @return: None - Test Pass / Fail result is generated.
+    "
+"broken","Sun Apr 17 15:35:45 GMT 2022","Sun Apr 17 15:35:45 GMT 2022","0","integration.tests","test_output_to_elasticsearch","","","","test_elastic_index_exists[kube-api]","
+    This test verifies that findings of all types are sending to elasticsearch
+    :param elastic_client: Elastic API client
+    :param match_type: Findings type for matching
+    :return:
+    "
+"broken","Sun Apr 17 15:35:47 GMT 2022","Sun Apr 17 15:35:47 GMT 2022","0","product.tests","test_rules","","","","test_master_node_configuration[CIS 1.1.2 root:root]","
+    This data driven test verifies rules and findings return by cloudbeat agent.
+    In order to add new cases @pytest.mark.parameterize section shall be updated.
+    Setup and teardown actions are defined in data method.
+    This test creates cloudbeat agent instance, changes node resources (modes, users, groups) and verifies,
+    that cloudbeat returns correct finding.
+    @param data: Fixture that returns object instances and configurations.
+    @param rule_tag: Name of rule to be verified.
+    @param command: Command to be executed, for example chmod / chown
+    @param param_value: Value to be used when executing command.
+    @param resource: Full path to resource / file
+    @param expected: Result to be found in finding evaluation field.
+    @return: None - Test Pass / Fail result is generated.
+    "
+"broken","Sun Apr 17 15:35:46 GMT 2022","Sun Apr 17 15:35:46 GMT 2022","0","product.tests","test_rules","","","","test_master_node_configuration[CIS 1.1.1 mode 700]","
+    This data driven test verifies rules and findings return by cloudbeat agent.
+    In order to add new cases @pytest.mark.parameterize section shall be updated.
+    Setup and teardown actions are defined in data method.
+    This test creates cloudbeat agent instance, changes node resources (modes, users, groups) and verifies,
+    that cloudbeat returns correct finding.
+    @param data: Fixture that returns object instances and configurations.
+    @param rule_tag: Name of rule to be verified.
+    @param command: Command to be executed, for example chmod / chown
+    @param param_value: Value to be used when executing command.
+    @param resource: Full path to resource / file
+    @param expected: Result to be found in finding evaluation field.
+    @return: None - Test Pass / Fail result is generated.
+    "
+"broken","Sun Apr 17 15:35:46 GMT 2022","Sun Apr 17 15:35:46 GMT 2022","0","product.tests","test_cloudbeat","","","","test_cloudbeat_pods_running","
+    This test verifies that all pods are in status ""Running""
+    :param data: (Pods list, Nodes list)
+    :return:
+    "
+"broken","Sun Apr 17 15:35:44 GMT 2022","Sun Apr 17 15:35:44 GMT 2022","0","integration.tests","test_output_to_elasticsearch","","","","test_elastic_index_exists[file-system]","
+    This test verifies that findings of all types are sending to elasticsearch
+    :param elastic_client: Elastic API client
+    :param match_type: Findings type for matching
+    :return:
+    "
+"broken","Sun Apr 17 15:35:45 GMT 2022","Sun Apr 17 15:35:45 GMT 2022","0","product.tests","test_cloudbeat","","","","test_cloudbeat_pod_exist","
+    This test verifies that pods count is equal to nodes count
+    :param data: (Pods list, Nodes list)
+    :return:
+    "
