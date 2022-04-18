@@ -1,0 +1,178 @@
+{
+  "uid" : "e9664cd07ebd69c6",
+  "name" : "test_cloudbeat_pods_running",
+  "fullName" : "product.tests.test_cloudbeat#test_cloudbeat_pods_running",
+  "historyId" : "3b2fce48ece491575a06d23ab8f2970e",
+  "time" : {
+    "start" : 1650270729349,
+    "stop" : 1650270729349,
+    "duration" : 0
+  },
+  "description" : "\n    This test verifies that all pods are in status \"Running\"\n    :param data: (Pods list, Nodes list)\n    :return:\n    ",
+  "descriptionHtml" : "<pre><code>This test verifies that all pods are in status &quot;Running&quot;\n:param data: (Pods list, Nodes list)\n:return:\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "api_client",
+    "time" : {
+      "start" : 1650270727818,
+      "stop" : 1650270727818,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "k8s",
+    "time" : {
+      "start" : 1650270727819,
+      "stop" : 1650270727820,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "data",
+    "time" : {
+      "start" : 1650270729308,
+      "stop" : 1650270729349,
+      "duration" : 41
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "elastic_client",
+    "time" : {
+      "start" : 1650270727818,
+      "stop" : 1650270727819,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "cloudbeat_agent",
+    "time" : {
+      "start" : 1650270727818,
+      "stop" : 1650270727818,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "ci_cloudbeat"
+  }, {
+    "name" : "tag",
+    "value" : "product"
+  }, {
+    "name" : "tag",
+    "value" : "sanity"
+  }, {
+    "name" : "parentSuite",
+    "value" : "product.tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_cloudbeat"
+  }, {
+    "name" : "host",
+    "value" : "test-pod-v1"
+  }, {
+    "name" : "thread",
+    "value" : "9-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "product.tests.test_cloudbeat"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "49860c31b52f7e76",
+        "reportUrl" : "https://ofiriro3.github.io/cloudbeat/3//#testresult/49860c31b52f7e76",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650268850459,
+          "stop" : 1650268850459,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "80b53932300c3560",
+        "reportUrl" : "https://ofiriro3.github.io/cloudbeat/2//#testresult/80b53932300c3560",
+        "status" : "passed",
+        "time" : {
+          "start" : 1650265916786,
+          "stop" : 1650265916786,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "76371a78e500fbd9",
+        "reportUrl" : "https://ofiriro3.github.io/cloudbeat/1//#testresult/76371a78e500fbd9",
+        "status" : "broken",
+        "statusDetails" : "docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))",
+        "time" : {
+          "start" : 1650209746036,
+          "stop" : 1650209746036,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "product", "ci_cloudbeat", "sanity" ]
+  },
+  "source" : "e9664cd07ebd69c6.json",
+  "parameterValues" : [ ]
+}
