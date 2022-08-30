@@ -56,7 +56,7 @@ type Config struct {
 	KubeConfig string                  `config:"kube_config"`
 	Period     time.Duration           `config:"period"`
 	Processors processors.PluginConfig `config:"processors"`
-	Streams    []Stream                `config:"streams"`
+	Streams    []Stream                `config:"streamsa"`
 	Type       string                  `config:"type"`
 }
 
