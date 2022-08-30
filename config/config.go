@@ -61,7 +61,8 @@ type Config struct {
 }
 
 type Stream struct {
-	AWSConfig  aws.ConfigAWS  `config:",inline"`
+	AWSConfig aws.ConfigAWS `config:",inline"`
+
 	RuntimeCfg *RuntimeConfig `config:"runtime_cfg"`
 }
 
