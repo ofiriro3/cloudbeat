@@ -1,9 +1,8 @@
 name: Weekly environment deployment
 
 on:
-  on:
-    schedule:
-      - cron: '*/30 * * * *'
+  schedule:
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       environment:
